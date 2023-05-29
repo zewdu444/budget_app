@@ -1,0 +1,25 @@
+<%=form_with model:[current_user,current_user.groups.build] do |form| %>
+  <div>
+    <h2>Create New Catagory</h2>
+    <div>
+      <div>
+        <%= form.label :name  %><br>
+        <%= form.text_field :name%>
+        <% form.object.errors.full_messages_for(:title).each do |message|%>
+          <div><%= message %></div>
+        <%end%>
+      </div>
+      <div>
+        <%= form.label :icon  %><br>
+        <%= form.text_field :icon%>
+        <% form.object.errors.full_messages_for(:icon).each do |message|%>
+          <div><%= message %></div>
+        <%end%>
+      </div>
+      <br>
+      <div>
+        <%= form.submit "Create Catagory" %>
+      </div>
+    </div>
+  </div>
+<% end %>

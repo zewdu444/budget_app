@@ -5,7 +5,7 @@
         <div><%=group.icon%></div>
         <div>
           <h2>
-            <%= link_to 'group.name', user_group_path(current_user,group.id)  %>
+            <%= link_to "#{group.name}", user_group_path(current_user,group.id)  %>
           </h2>
           <p><%=group.created_at%></p>
         </div>

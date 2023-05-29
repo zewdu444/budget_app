@@ -9,11 +9,25 @@ class GroupsController < ApplicationController
     @expenses = @group.expenses.order('created_at DESC')
   end
 
-  def new; end
+  def new
+    @group = current_user.groups.new
+  end
 
-  def create; end
+  def create
+    @group = current_user.groups.new(group_params)
+    if @group.save
+      redirect_to user_groups_path(current_user), notice: 'Catagories created successfully'
+    else
+      render :new
+    end
+  end
 
   def destroy; end
 
   def splash; end
+
+  def group_params
+    params.require(:group).permit(:name,:icon)
+  end
+
 end
