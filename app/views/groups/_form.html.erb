@@ -11,15 +11,16 @@
       </div>
       <div>
         <%= form.label :icon  %><br>
-        <%= form.text_field :icon%>
+        <%= form.file_field :icon%>
         <% form.object.errors.full_messages_for(:icon).each do |message|%>
           <div><%= message %></div>
         <%end%>
       </div>
       <br>
       <div>
-        <%= form.submit "Create Catagory" %>
+        <%= form.submit "Save" %>
       </div>
+      <BUtton><%= link_to "Back", :back %></BUtton>
     </div>
   </div>
 <% end %>

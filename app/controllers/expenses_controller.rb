@@ -1,11 +1,31 @@
 class ExpensesController < ApplicationController
-  def index; end
 
-  def show; end
+  def index
+    @group= Group.find(params[:group_id])
+    @expenses = @group.expenses.order('created_at DESC')
+  end
 
-  def new; end
+  def new;
+    @expense=current_user.expenses.new
+    @group=Group.find(params[:group_id])
+  end
 
-  def create; end
+  def create
 
-  def destroy; end
+    @expense = current_user.expenses.new(expense_params.slice(:name, :amount))
+    if @expense.save
+      @expense_group = ExpenseGroup.new(expense_id: @expense.id, group_id: params[:expense][:group_id])
+
+      if @expense_group.save
+        redirect_to user_groups_path(current_user), notice: 'Expense created successfully'
+      end
+    else
+      render :new
+    end
+  end
+
+  private
+  def expense_params
+    params.require(:expense).permit!
+  end
 end

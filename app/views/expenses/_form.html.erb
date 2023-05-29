@@ -1,0 +1,32 @@
+<%=form_with model:[current_user, @group, Expense.new], url:user_group_expenses_path(current_user,@group) do |form| %>
+  <div>
+    <h2>Create New Expense</h2>
+    <div>
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        <% form.object.errors.full_messages_for(:name).each do |message|%>
+          <div><%= message %></div>
+        <%end%>
+      </div>
+      <br>
+      <div class="field">
+        <%= form.label :amount %>
+        <%= form.text_field :amount %>
+        <% form.object.errors.full_messages_for(:amount).each do |message|%>
+          <div><%= message %></div>
+        <%end%>
+      </div>
+      <br>
+      <div>
+        <%= form.label :Catagory %>
+        <%= form.collection_select :group_id, @current_user.groups , :id, :name %>
+      </div>
+      <br>
+      <div>
+        <%= form.submit 'Save' %>
+        <BUtton><%= link_to "Back", :back %></BUtton>
+      </div>
+    </div>
+  </div>
+<% end %>
