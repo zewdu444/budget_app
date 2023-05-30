@@ -2,7 +2,7 @@
   <div>
     <% @groups.each do |group| %>
       <div>
-        <div><%= cl_image_tag group.icon.key if group.icon.attached? %></div>
+        <div><%= group.icon %></div>
         <div>
           <h2>
             <%= link_to "#{group.name}", user_group_expenses_path(current_user,group.id)  %>

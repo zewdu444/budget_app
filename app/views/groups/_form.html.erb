@@ -1,26 +1,27 @@
-<%=form_with model:[current_user,current_user.groups.build] do |form| %>
+<%= form_with(model: [current_user, current_user.groups.build], multipart: true) do |form| %>
+  <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
   <div>
-    <h2>Create New Catagory</h2>
+    <h2>Create New Category</h2>
     <div>
       <div>
-        <%= form.label :name  %><br>
-        <%= form.text_field :name%>
-        <% form.object.errors.full_messages_for(:title).each do |message|%>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+        <% form.object.errors.full_messages_for(:name).each do |message| %>
           <div><%= message %></div>
-        <%end%>
+        <% end %>
       </div>
       <div>
-        <%= form.label :icon  %><br>
-        <%= form.file_field :icon%>
-        <% form.object.errors.full_messages_for(:icon).each do |message|%>
+        <%= form.label :icon %><br>
+        <%= form.file_field :picture  %>
+        <% form.object.errors.full_messages_for(:picture).each do |message| %>
           <div><%= message %></div>
-        <%end%>
+        <% end %>
       </div>
       <br>
       <div>
         <%= form.submit "Save" %>
       </div>
-      <BUtton><%= link_to "Back", :back %></BUtton>
+      <button><%= link_to "Back", :back %></button>
     </div>
   </div>
 <% end %>
