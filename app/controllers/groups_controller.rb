@@ -12,9 +12,9 @@ class GroupsController < ApplicationController
     if params[:group][:picture].present?
       uploaded_file = params[:group][:picture].tempfile
       cloudinary_response = Cloudinary::Uploader.upload(uploaded_file.path, folder: "group_icons")
-      @group = current_user.groups.new(group_params.merge(icon: cloudinary_response['secure_url']).except(:picture, :authenticity_token))
+      @group = current_user.groups.new(group_params.merge(icon: cloudinary_response['secure_url']).except(:picture))
     else
-      @group = current_user.groups.new(group_params.except(:picture, :authenticity_token))
+      @group = current_user.groups.new(group_params.except(:picture))
     end
     if @group.save
       redirect_to user_groups_path(current_user), notice: 'Categories created successfully'
@@ -28,6 +28,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :picture, :authenticity_token)
+    params.require(:group).permit(:name, :picture)
   end
 end

@@ -1,5 +1,4 @@
 <%= form_with(model: [current_user, current_user.groups.build], multipart: true) do |form| %>
-  <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
   <div>
     <h2>Create New Category</h2>
     <div>
