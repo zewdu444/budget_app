@@ -11,10 +11,14 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link href="https://fonts.cdnfonts.com/css/proxima-nova-2" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= javascript_importmap_tags %>
   </head>
   <body class="#eceff1 blue-grey lighten-5 center-align">
     <main class="col s12 m6  white">
+      <% unless current_page?(splash_path) %>
+        <%= render 'shared/navbar' %>
+      <% end %>
       <%=render 'shared/flash' %>
       <%= yield %>
     </body>

@@ -1,0 +1,78 @@
+<div class="nav_bar light-blue darken-3 white-text">
+  <% if current_page?(new_user_session_path) %>
+    <div ><%= link_to(:back) do %>
+        <%= content_tag(:div) do %>
+          <i class="material-icons white-text">arrow_back</i>
+        <% end %>
+      <% end %></div>
+    <h5>LOGIN</h5>
+    <p>Log in</p>
+  <% end %>
+  <% if current_page?(new_user_registration_path) %>
+    <div ><%= link_to(:back) do %>
+        <%= content_tag(:div) do %>
+          <i class="material-icons white-text">arrow_back</i>
+        <% end %>
+      <% end %></div>
+    <h5>REGISTER</h5>
+    <p>Next</p>
+  <% end %>
+  <% if current_page?(new_user_password_path)%>
+    <div ><%= link_to(:back) do %>
+        <%= content_tag(:div) do %>
+          <i class="material-icons white-text">arrow_back</i>
+        <% end %>
+      <% end %></div>
+    <h5>RESET PASSWORD</h5>
+    <p>Reset</p>
+  <% end %>
+  <%if current_page?(new_user_confirmation_path)%>
+    <div ><%= link_to(:back) do %>
+        <%= content_tag(:div) do %>
+          <i class="material-icons white-text">arrow_back</i>
+        <% end %>
+      <% end %></div>
+    <h5>RESEND EMAIL CONFIRM</h5>
+    <p>Confirm</p>
+  <% end %>
+  <% if current_page?(authenticated_root_path) %>
+    <div>
+      <i class="material-icons white-text">menu</i>
+    </div>
+    <h5>TRANSACTIONS</h5>
+    <p><i class="material-icons white-text">search</i></p>
+  <% end %>
+  <% unless @current_user.nil? %>
+    <%if current_page?(new_user_group_path(current_user))%>
+      <div ><%= link_to(:back) do %>
+          <%= content_tag(:div) do %>
+            <i class="material-icons white-text">arrow_back</i>
+          <% end %>
+        <% end %></div>
+      <h5>CREATE NEW CATEGORY</h5>
+      <p>Create</p>
+    <% end %>
+  <% end %>
+  <% unless @group.nil? %>
+    <% if current_page?(user_group_expenses_path(current_user, @group)) %>
+      <div>
+        <%= link_to(:back) do %>
+          <%= content_tag(:div) do %>
+            <i class="material-icons white-text">arrow_back</i>
+          <% end %>
+        <% end %>
+      </div>
+      <h5>DETAILS</h5>
+      <p></p>
+    <% end %>
+    <%if current_page?(new_user_group_expense_path(current_user, @group))%>
+      <div ><%= link_to(:back) do %>
+          <%= content_tag(:div) do %>
+            <i class="material-icons white-text">arrow_back</i>
+          <% end %>
+        <% end %></div>
+      <h5>ADD NEW TRANSACTIONS </h5>
+      <p>Create</p>
+    <% end %>
+  <% end %>
+</div>
