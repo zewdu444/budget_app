@@ -1,0 +1,36 @@
+<div class="group_holder">
+  <div class="group_card">
+    <div class="card_element">
+      <div class="picture_holder">
+        <img src=<%= @group.icon %> alt="group picture">
+      </div>
+      <div class="name_holder">
+        <h5 class="group_name">
+          <%=@group.name%>
+        </h5>
+        <p class="detail_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto explicabo facere mollitia in vel ipsum dicta ipsa</p>
+      </div>
+    </div>
+    <hr>
+    <div>
+      <% @expenses.each do |expense| %>
+        <div class="transaction">
+          <p>Transaction No <%=expense.id%></p>
+          <div class="transaction_detail">
+            <p><%=expense.created_at.strftime('%d %B %Y')%></p>
+            <p>$<%=expense.amount%></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <hr>
+    <div class="total_transaction">
+      <h5 class="total_font">TOTAL PAYMENT</h5>
+      <h5 class="total_font">$<%=@group.total_amount_by_group(@group.id)%></h5>
+    </div>
+  </div>
+</div>
+<div>
+  <button class="button_holder"><%= link_to "Add a new transaction", new_user_group_expense_path(current_user,@group), class: "button_text" %></button>
+</div>
+</div>

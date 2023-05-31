@@ -1,0 +1,12 @@
+<%= form_with model: [current_user, @group, Expense.new], url: user_group_expenses_path(current_user, @group) do |form| %>
+  <div class="sign_in_holder">
+    <div class="sign_in_fields">
+      <%= form.text_field :name, placeholder: 'Name', required: true %>
+      <%= form.number_field :amount, step: :any, required: true, placeholder: 'Amount' %>
+      <%= form.collection_select :group_id, @current_user.groups, :id, :name, { prompt: 'Select a group' }, required: true %>
+    </div>
+    <div>
+      <%= form.submit 'Save' %>
+    </div>
+  </div>
+<% end %>

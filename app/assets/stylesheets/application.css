@@ -13,3 +13,249 @@
  *= require_tree .
  *= require_self
  */
+
+button {
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+main {
+  margin-top: -2%;
+  padding-top: 40px;
+  max-width: 480px;
+  min-height: 105vh;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.splash_holder {
+  min-height: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.splash_holder > h2 {
+  margin-top: 40%;
+  font-size: 3em;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.splash_button_holder {
+  margin-top: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.splash_button_holder > button {
+  width: 95%;
+  margin-bottom: 10px;
+}
+
+.nav_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #0277bd;
+}
+
+@media (min-width: 375px) {
+  .nav_bar {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.sign_in_holder {
+  margin-top: 23%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.sign_in_fields {
+  background-color: #fbfdff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+input[type="submit"] {
+  margin-top: 25px;
+  width: 97%;
+  border: none;
+  background-color: #43a047;
+  box-shadow:
+    0 0 0 5px #43a047,
+    inset 0 0 0 1px #fff;
+  color: #fff;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+input[type="email"]::placeholder {
+  color: #989da3;
+}
+
+input[type="text"]::placeholder {
+  color: #989da3;
+}
+
+input[type="password"]::placeholder {
+  color: #989da3;
+}
+
+.notification {
+  display: flex;
+  position: fixed;
+  margin-top: 50px;
+  margin-left: 120px;
+  max-width: 60%;
+  flex-wrap: wrap;
+  color: #607d8b;
+}
+
+.group_holder {
+  margin-top: 20%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.group_card {
+  background-color: #fbfdff;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-bottom: 15px;
+}
+
+.card_element {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.picture_holder {
+  flex: 0 0 30%;
+}
+
+.picture_holder > img {
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+}
+
+.group_description_holder {
+  flex: 0 0 70%;
+}
+
+.group_name {
+  color: #989da3;
+}
+
+.group_amount {
+  padding-right: 5px;
+}
+
+.name_total_holder {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+hr {
+  border-color: #e6f7ff;
+  border-style: solid;
+  border-width: 0.3px;
+}
+
+.group_date_created {
+  text-align: left;
+  color: #989da3;
+}
+
+.button_holder {
+  margin-top: 50px;
+  width: 97%;
+  border: none;
+  background-color: #43a047;
+  box-shadow:
+    0 0 0 5px #43a047,
+    inset 0 0 0 1px #fff;
+  color: #fff;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.button_text {
+  text-align: center;
+  color: white;
+}
+
+.custom-file-label {
+  color: #989da3;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.picture_input {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #989da3;
+}
+
+.name_holder {
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  align-items: flex-start;
+}
+
+.detail_description {
+  text-align: left;
+  color: #989da3;
+}
+
+.transaction {
+  padding-left: 10px;
+  text-align: left;
+}
+
+.transaction_detail {
+  color: #989da3;
+}
+
+.total_transaction {
+  display: flex;
+  flex-direction: row;
+  padding: 15px 10px;
+  justify-content: space-between;
+}
+
+.total_font {
+  font-size: 20px;
+}
+
+select {
+  display: block !important;
+  color: #989da3;
+}

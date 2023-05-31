@@ -1,0 +1,80 @@
+<div class="nav_bar">
+  <% if current_page?(new_user_session_path) || request&.path&.include?('/users/sign_in')%>
+    <div ><%= link_to(:back) do %>
+        <%= content_tag(:div) do %>
+          <i class="material-icons white-text">arrow_back</i>
+        <% end %>
+      <% end %></div>
+    <h5>LOGIN</h5>
+    <p>Log in</p>
+  <% end %>
+  <% if current_page?(new_user_registration_path) || request&.path == '/users' %>
+    <div ><%= link_to(:back) do %>
+        <%= content_tag(:div) do %>
+          <i class="material-icons white-text">arrow_back</i>
+        <% end %>
+      <% end %></div>
+    <h5>REGISTER</h5>
+    <p>Next</p>
+  <% end %>
+  <% if current_page?(new_user_password_path) || request&.path&.include?('/users/password') %>
+    <div ><%= link_to(:back) do %>
+        <%= content_tag(:div) do %>
+          <i class="material-icons white-text">arrow_back</i>
+        <% end %>
+      <% end %></div>
+    <h5>RESET PASSWORD</h5>
+    <p>Reset</p>
+  <% end %>
+  <%if current_page?(new_user_confirmation_path)|| request&.path&.include?('/users/confirmation')%>
+    <div ><%= link_to(:back) do %>
+        <%= content_tag(:div) do %>
+          <i class="material-icons white-text">arrow_back</i>
+        <% end %>
+      <% end %></div>
+    <h5>RESEND EMAIL CONFIRM</h5>
+    <p>Confirm</p>
+  <% end %>
+  <% if current_page?(authenticated_root_path) && !current_user.nil?  %>
+    <div>
+      <i class="material-icons white-text">menu</i>
+    </div>
+    <h5>TRANSACTIONS</h5>
+    <p><i class="material-icons white-text">search</i></p>
+  <% end %>
+  <% if request&.path&.include?('groups/new')%>
+    <%if current_page?(new_user_group_path(current_user))%>
+      <div ><%= link_to authenticated_root_path do %>
+          <%= content_tag(:div) do %>
+            <i class="material-icons white-text">arrow_back</i>
+          <% end %>
+        <% end %></div>
+      <h5>CREATE NEW CATEGORY</h5>
+      <p>Create</p>
+    <% end %>
+  <% end %>
+  <% if request&.path&.include?('expenses') %>
+    <% if request.path ==user_group_expenses_path(current_user, @group)%>
+      <div>
+        <%= link_to authenticated_root_path do %>
+          <%= content_tag(:div) do %>
+            <i class="material-icons white-text">arrow_back</i>
+          <% end %>
+        <% end %>
+      </div>
+      <h5>DETAILS</h5>
+      <p></p>
+    <% end %>
+  <% end %>
+  <% if request&.path&.include?('expenses/new') %>
+    <%if current_page?(new_user_group_expense_path(current_user, @group))%>
+      <div ><%= link_to(:back) do %>
+          <%= content_tag(:div) do %>
+            <i class="material-icons white-text">arrow_back</i>
+          <% end %>
+        <% end %></div>
+      <h5>ADD NEW TRANSACTIONS </h5>
+      <p>Create</p>
+    <% end %>
+  <% end %>
+</div>

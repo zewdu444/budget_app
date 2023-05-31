@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   resources :users, only: [:index, :show] do
     resources :groups, only: [:index, :show, :new, :create, :destroy] do
-      resources :expense, only: [:index, :show, :new, :create, :destroy] do
-          resources :expense_group, only: [:new, :create, :destroy]
+      resources :expenses, only: [:index, :show, :new, :create, :destroy] do
+          resources :expense_groups, only: [:new, :create, :destroy]
        end
     end
   end
@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   end
 
   unauthenticated do
-    root 'groups#splash', as: :unauthenticated_root
+    get '/', to: redirect('/splash')
   end
 end

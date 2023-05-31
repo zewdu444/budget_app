@@ -1,0 +1,16 @@
+<%= form_with(model: [current_user, current_user.groups.build], multipart: true) do |form| %>
+  <div class="sign_in_holder">
+    <div class="sign_in_fields">
+      <div>
+        <%= form.text_field :name , placeholder:'Name', required: true %>
+      </div>
+      <div class="picture_input">
+        <p class="custom-file-label" >Choose icon</p>
+        <%= form.file_field :picture, class: "file-input", id: "file-input", required: true %>
+      </div>
+    </div>
+    <div>
+      <%= form.submit "Save"%>
+    </div>
+  </div>
+<% end %>
