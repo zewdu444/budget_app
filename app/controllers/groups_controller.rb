@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!, except: [:splash]
   def index
-    @groups = current_user.groups
+    @groups = current_user.groups.order(created_at: :desc)
   end
 
   def new

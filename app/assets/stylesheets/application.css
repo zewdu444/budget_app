@@ -260,3 +260,8 @@ hr{
 .total_font{
   font-size: 20px;
 }
+
+select{
+  display: block !important;
+  color: #989DA3;
+}
