@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   end
 
   unauthenticated do
-    root 'groups#splash', as: :unauthenticated_root
+    get '/', to: redirect('/splash')
   end
 end

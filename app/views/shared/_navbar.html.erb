@@ -1,4 +1,4 @@
-<div class="nav_bar light-blue darken-3 white-text">
+<div class="nav_bar">
   <% if current_page?(new_user_session_path) || request&.path&.include?('/users/sign_in')%>
     <div ><%= link_to(:back) do %>
         <%= content_tag(:div) do %>
@@ -35,7 +35,7 @@
     <h5>RESEND EMAIL CONFIRM</h5>
     <p>Confirm</p>
   <% end %>
-  <% if current_page?(authenticated_root_path) %>
+  <% if current_page?(authenticated_root_path) && !current_user.nil?  %>
     <div>
       <i class="material-icons white-text">menu</i>
     </div>
