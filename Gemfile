@@ -13,6 +13,7 @@ gem 'sprockets-rails'
 
 gem  'ffi', '~> 1.15.0'
 gem 'cloudinary'
+gem 'cancancan'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
