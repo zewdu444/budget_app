@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -7,9 +5,10 @@ class Ability
     # Define abilities for the user here. For example:
     #
     return unless user.present?
+
     can :splash, Group
     can :manage, Group
-    can :manage,Expense
+    can :manage, Expense
     can :manage, ExpenseGroup
     #
     # The first argument to `can` is the action you are giving the user

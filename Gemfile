@@ -11,9 +11,9 @@ gem 'rails', '~> 7.0.5'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-gem  'ffi', '~> 1.15.0'
-gem 'cloudinary'
 gem 'cancancan'
+gem 'cloudinary'
+gem 'ffi', '~> 1.15.0'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'

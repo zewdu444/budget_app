@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   def create
     if params[:group][:picture].present?
       uploaded_file = params[:group][:picture].tempfile
-      cloudinary_response = Cloudinary::Uploader.upload(uploaded_file.path, folder: "group_icons")
+      cloudinary_response = Cloudinary::Uploader.upload(uploaded_file.path, folder: 'group_icons')
       @group = current_user.groups.new(group_params.merge(icon: cloudinary_response['secure_url']).except(:picture))
     else
       @group = current_user.groups.new(group_params.except(:picture))
