@@ -16,11 +16,11 @@
   </head>
   <body class="#eceff1 blue-grey lighten-4 center-align">
     <main class="col s12 m6  blue-grey lighten-5 ">
-      <% unless current_page?(splash_path) %>
+      <% unless current_page?(splash_path)  %>
         <%= render 'shared/navbar' %>
       <% end %>
-      <%=render 'shared/flash' %>
+      <%=render 'shared/flash'%>
       <%= yield %>
-    </body>
-  </main>
+    </main>
+  </body>
 </html>

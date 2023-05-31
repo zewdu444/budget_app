@@ -114,3 +114,27 @@ input[type="submit"] {
  margin-bottom: 10px;
 
 }
+
+
+input[type="email"]::placeholder{
+  color: #90a4ae;
+}
+input[type="text"]::placeholder{
+  color: #90a4ae;
+}
+
+
+input[type="password"]::placeholder{
+  color:
+  #90a4ae;
+}
+
+.notification{
+ display: flex;
+ position: fixed;
+ margin-top: 50px;
+ margin-left: 120px;
+ max-width: 60%;
+ flex-wrap: wrap;
+ color:#607d8b
+}

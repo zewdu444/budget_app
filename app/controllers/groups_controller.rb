@@ -17,7 +17,7 @@ class GroupsController < ApplicationController
       @group = current_user.groups.new(group_params.except(:picture))
     end
     if @group.save
-      redirect_to user_groups_path(current_user), notice: 'Categories created successfully'
+      redirect_to authenticated_root_path, notice: 'Categories created successfully'
     else
       render :new
     end
