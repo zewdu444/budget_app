@@ -10,7 +10,7 @@ module BudgetApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-
+    config.secret_key_base = '4ad0f370089e61ac30974e8f57fa49032447b46179cd05fb238fa93952a0ac111785ae34d14027cbbe977115d7fdbee0820ceeb3ac08588cfe777b25cf9de6e6'
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
