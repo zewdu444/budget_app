@@ -40,8 +40,9 @@ RSpec.describe 'Expenses', type: :feature do
          visit new_user_group_expense_path(@user, @group)
           fill_in 'Name', with: 'Test expense'
           fill_in 'Amount', with: 100
+          select  'Test group', from: 'expense[group_id]'
           click_button 'Save'
-          expect(page).to have_content('ADD NEW TRANSACTIONS')
+          expect(page).to have_content('Add a new transaction')
       end
   end
 end

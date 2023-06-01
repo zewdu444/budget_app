@@ -15,8 +15,6 @@ class GroupsController < ApplicationController
       cloudinary_response = Cloudinary::Uploader.upload(uploaded_file.path, folder: 'group_icons')
       params[:group][:icon] = cloudinary_response['secure_url']
       @group = current_user.groups.new(group_params)
-    else
-       redirect_to new_group_path, notice:'Please select an icon for your group'
     end
     if @group.save
       redirect_to authenticated_root_path, notice: 'Categories created successfully'
