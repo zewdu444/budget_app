@@ -40,7 +40,7 @@
       <i class="material-icons white-text">menu</i>
     </div>
     <h5>TRANSACTIONS</h5>
-    <p><i class="material-icons white-text">search</i></p>
+    <h6><%= link_to "Sign out", destroy_user_session_path, class:"white-text" %></h6>
   <% end %>
   <% if request&.path&.include?('groups/new')%>
     <%if current_page?(new_user_group_path(current_user))%>
