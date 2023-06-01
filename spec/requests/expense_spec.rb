@@ -4,11 +4,11 @@ RSpec.describe 'Expenses', type: :request do
   include Devise::Test::IntegrationHelpers # Include Devise test helpers
   before(:each) do
     @user = User.create(name: 'Test user', email: 'test444@gmail.com', password: '123456',
-      password_confirmation: '123456', confirmation_token: nil, confirmed_at: Time.now)
-    @group = Group.create(name: 'Test group', icon:'http://example.com', author_id: @user.id)
-     @expense = Expense.create(name: 'Test expense', amount: 100, author_id: @user.id)
-      @expense_group = ExpenseGroup.create(expense_id: @expense.id, group_id: @group.id)
-      sign_in @user
+                        password_confirmation: '123456', confirmation_token: nil, confirmed_at: Time.now)
+    @group = Group.create(name: 'Test group', icon: 'http://example.com', author_id: @user.id)
+    @expense = Expense.create(name: 'Test expense', amount: 100, author_id: @user.id)
+    @expense_group = ExpenseGroup.create(expense_id: @expense.id, group_id: @group.id)
+    sign_in @user
   end
   describe 'GET /expenses' do
     it 'returns http success' do

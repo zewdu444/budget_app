@@ -17,7 +17,8 @@ class ExpensesController < ApplicationController
       @expense_group = ExpenseGroup.new(expense_id: @expense.id, group_id: params[:expense][:group_id])
 
       if @expense_group.save
-        redirect_to user_group_expenses_path(current_user, params[:expense][:group_id]), notice: 'Expense created successfully'
+        redirect_to user_group_expenses_path(current_user, params[:expense][:group_id]),
+                    notice: 'Expense created successfully'
       end
     else
       render :new

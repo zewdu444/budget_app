@@ -53,7 +53,7 @@ RSpec.describe 'Users', type: :feature do
     scenario 'when user clicks on dint receive confirmation instructions link it will redirect to confirmation instructions page' do
       visit new_user_session_path
       click_link "Didn't receive confirmation instructions?"
-      expect(page).to have_content("Forgot your password?")
+      expect(page).to have_content('Forgot your password?')
     end
   end
   describe 'sign up page' do
@@ -73,7 +73,7 @@ RSpec.describe 'Users', type: :feature do
       visit new_user_registration_path
       fill_in 'Full Name', with: @user.name
       fill_in 'Email', with: @user.email
-      fill_in "user[password]", with: @user.password
+      fill_in 'user[password]', with: @user.password
       fill_in 'Confirm password', with: @user.password_confirmation
       click_button 'Sign up'
       expect(page).to have_content("Didn't receive confirmation instructions?")
@@ -100,7 +100,7 @@ RSpec.describe 'Users', type: :feature do
     end
     it 'should have a confirmation instructions form' do
       visit new_user_confirmation_path
-      expect(page).to have_content("Sign up Forgot your password?")
+      expect(page).to have_content('Sign up Forgot your password?')
     end
     it 'should have a resend confirmation instructions button' do
       visit new_user_confirmation_path
