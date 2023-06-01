@@ -16,10 +16,10 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
   config.action_mailer.delivery_method = :smtp
-   config.action_mailer.smtp_settings = {
+  config.action_mailer.smtp_settings = {
   address: 'smtp.gmail.com',
   port: 587,
-  domain: 'https://budget-app-ai3m.onrender.com/', # Replace with your domain or leave blank
+  domain: 'budget-app-ai3m.onrender.com', # Replace with your domain or leave blank
   user_name: 'zewdu444@gmail.com',
   password: 'ZDM444ED',
   authentication: 'plain',

@@ -10,6 +10,16 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Do not eager load code on boot.
   config.eager_load = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address: 'smtp.gmail.com',
+  port: 587,
+  domain: 'budget-app-ai3m.onrender.com', # Replace with your domain or leave blank
+  user_name: 'zewdu444@gmail.com',
+  password: 'ZDM444ED',
+  authentication: 'plain',
+  enable_starttls_auto: true
+  }
 
   # Show full error reports.
   config.consider_all_requests_local = true
