@@ -26,7 +26,7 @@
     <hr>
     <div class="total_transaction">
       <h5 class="total_font">TOTAL PAYMENT</h5>
-      <h5 class="total_font">$<%=@group.total_amount_by_group(@group.id)%></h5>
+      <h5 class="total_font">$<%=number_with_delimiter(@group.total_amount_by_group(@group.id))%></h5>
     </div>
   </div>
 </div>
