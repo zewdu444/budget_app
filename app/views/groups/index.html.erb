@@ -10,7 +10,7 @@
             <h5 >
               <%= link_to "#{group.name}", user_group_expenses_path(current_user,group.id), class:"group_name"%>
             </h5>
-            <h5 class="group_amount">$<%=group.total_amount_by_group(group.id)%></h5>
+            <h5 class="group_amount">$<%=number_with_delimiter(group.total_amount_by_group(group.id))%></h5>
           </div>
           <div class="group_date_holder">
             <hr>
