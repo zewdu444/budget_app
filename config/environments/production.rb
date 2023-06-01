@@ -13,6 +13,7 @@ Rails.application.configure do
   config.eager_load = true
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
   # Full error reports are disabled and caching is turned on.
+  config.action_mailer.default_url_options = { host: 'https://budget-app-ai3m.onrender.com' }
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
   config.action_mailer.delivery_method = :smtp
