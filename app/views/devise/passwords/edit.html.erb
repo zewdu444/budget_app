@@ -1,0 +1,18 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <div class="sign_in_holder" >
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.hidden_field :reset_password_token %>
+    <div class="sign_in_fields">
+      <div class="field">
+        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder:'New-password (6 character minimum)' %>
+      </div>
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:'Confirm password ' %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Change my password" %>
+    </div>
+  <% end %>
+</div>
+<%= render "devise/shared/links" %>

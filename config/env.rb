@@ -1,0 +1,2 @@
+DATABASE_PASSWORD = 'pass1wd'
+DATABASE_USERNAME = 'postgres'
